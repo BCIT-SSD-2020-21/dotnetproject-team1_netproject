@@ -3,14 +3,15 @@
 <strong>Description:</strong> 
 Users are able to create accounts, and authenticate to log into an accessible forum, where they can post messages and reply to messages from other users.
 
-Feature List
+### Feature List
 1. Users can create accounts and authenticate to view the chat room messages
   1.1 Username
   1.2 Email
-  1.3 Profile Picture
+  1.3 Password
+  1.4 Profile Picture
 2. Post messages, reply to messages
   2.1 Text-Only messages
-  2.2 Simple formatting
+  2.2 Simple formatting -> Bolds, Italics, Underlines
 3. User can delete their own messages
 4. User can update their display name, and picture
 5. Users can upvote/downvote messages
@@ -18,8 +19,21 @@ Feature List
 8. English only
 9. User bans 
 
+### Functional Requirements
+1. User authentication
+2. User Post messages
+3. User can reply to messages
+4. User can delete their own messages
+5. English only
+6. Users can update their profile, and have it reflect in chat
 
-
+### Non Functional
+1. Users can upvote/downvote messages
+2. Users can see the timestamp of each message
+3. User bans
+4. Advanced formatting in messages
+5. Multiple chatrooms
+6. Emoji's / symbols in messages
 
 
 
