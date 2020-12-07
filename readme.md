@@ -56,6 +56,10 @@ Users are able to create accounts, and authenticate to log into an accessible fo
     - HTML/Raw text
 
 
+### Use Case Diagram
+<img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/parlez-usecase.png" alt="use case diagram for a messenger application" />
+
+
 
 
 
