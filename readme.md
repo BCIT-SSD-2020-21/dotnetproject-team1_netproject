@@ -19,14 +19,14 @@
 ### CORE APPLICATION FEATURES
 1. User authentication
 2. Users can post messages
-3. User can reply to messages
+3. Users can upvote/downvote messages
 4. User can delete their own messages
 5. Users can update their profile, and have it reflect in chat
 6. Users can see the timestamp of each message
 7. Administrators can ban users
 
 ### NICE-TO-HAVE FEATURES
-1. Users can upvote/downvote messages
+1. User can reply to messages
 2. Administrators can pin messages
 3. Advanced formatting in messages
 4. Multiple chatrooms
