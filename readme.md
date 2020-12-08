@@ -62,8 +62,7 @@ Users are able to create accounts, and authenticate to log into an accessible fo
 
 ### Low-Fidelity Prototype: 
 
-
-https://github.com/BCIT-SSD-2020-21/dotnetproject-team1_netproject.git
+https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/
 
 ![](https://i.imgur.com/HMVlDca.png)
 
