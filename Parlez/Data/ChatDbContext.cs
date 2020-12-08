@@ -10,6 +10,6 @@ namespace Parlez.Data
     {
         public ChatDbContext(DbContextOptions<ChatDbContext> options) : base(options) { }
 
-        public DbSet<Chat> Chats { get; set; }
+        //public DbSet<Chat> Chats { get; set; }
     }
 }
