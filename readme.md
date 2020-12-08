@@ -64,7 +64,9 @@ Users are able to create accounts, and authenticate to log into an accessible fo
 
 https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/
 
-![](https://i.imgur.com/HMVlDca.png)
+![](https://i.imgur.com/8cym8Zu.png)
+
+![](https://i.imgur.com/GIupcl2.png)
 
 
 
