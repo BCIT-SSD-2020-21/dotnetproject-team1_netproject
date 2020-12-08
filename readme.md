@@ -60,6 +60,13 @@ Users are able to create accounts, and authenticate to log into an accessible fo
 <img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/parlez-usecase.png" alt="use case diagram for a messenger application" />
 
 
+### Low-Fidelity Prototype: 
+
+
+https://github.com/BCIT-SSD-2020-21/dotnetproject-team1_netproject.git
+
+![](https://i.imgur.com/HMVlDca.png)
+
 
 
 
