@@ -1,7 +1,7 @@
 ###### .NET PROJECT
 ## PARLEZ CHAT APPLICATION
 ###### Mandeep Dhillon, Patrick Fortaleza, Juhwan Moon, AJ Purugganan, Kalvin Tang
-<strong>App name:</strong> Parlez 
+<strong>App name:</strong> Parlez <br/>
 <strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and reply to existing comments, as well as interact with other user's messages.
 
 ### FEATURE LIST
