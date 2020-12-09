@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
+using Parlez.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -31,6 +33,26 @@ namespace Parlez.Controllers
             _userManager = userManager;
             _config = config;
             _serviceProvider = serviceProvider;
+        }
+
+
+        [HttpPost("Register")]
+        public async Task<JsonResult> RegisterAsync([FromBody] RegisterVM registerVM)
+        {
+            if (ModelState.IsValid)
+            {
+                //will need to implement email or turn off email verification
+                var user = new IdentityUser { UserName = registerVM.Email, Email = registerVM.Email, EmailConfirmed = true };
+                var result = await _userManager.CreateAsync(user, registerVM.Password);
+                if (result.Succeeded)
+                {
+                    return await SignInAsync(new LoginVM() { Email = registerVM.Email, Password = registerVM.Password });
+                }
+            }
+            dynamic jsonResponse = new JObject();
+            jsonResponse.token = "";
+            jsonResponse.status = "Registration Failed";
+            return Json(jsonResponse);
         }
 
         string GenerateJSONWebToken(IdentityUser user)
