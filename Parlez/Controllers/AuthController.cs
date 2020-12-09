@@ -55,6 +55,40 @@ namespace Parlez.Controllers
             return Json(jsonResponse);
         }
 
+
+        [HttpPost("Login")]
+        public async Task<JsonResult> SignInAsync([FromBody] LoginVM loginVM)
+        {
+            dynamic jsonResponse = new JObject();
+            if (ModelState.IsValid)
+            {
+                var result = await
+                   _signInManager.PasswordSignInAsync(loginVM.Email.ToUpper(),
+                   loginVM.Password, loginVM.RememberMe, lockoutOnFailure: true);
+                if (result.Succeeded)
+                {
+                    var user = await _userManager.FindByEmailAsync(loginVM.Email);
+
+                    if (user != null)
+                    {
+                        var tokenString = GenerateJSONWebToken(user);
+                        jsonResponse.token = tokenString;
+                        jsonResponse.status = "OK";
+                        return Json(jsonResponse);
+                    }
+                }
+                else if (result.IsLockedOut)
+                {
+                    jsonResponse.token = "";
+                    jsonResponse.status = "Locked Out";
+                    return Json(jsonResponse);
+                }
+            }
+            jsonResponse.token = "";
+            jsonResponse.status = "Invalid Login";
+            return Json(jsonResponse);
+        }
+
         string GenerateJSONWebToken(IdentityUser user)
         {
             var securityKey
