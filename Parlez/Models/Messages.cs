@@ -11,15 +11,16 @@ namespace Parlez.Models
     {
         [Key]
         [ForeignKey("Users")]
-       public int? UserId { get; set; }
+       public int UserId { get; set; }
         public string MessageText { get; set; }
         public DateTime CreatedOn { get; set; }
 
         public virtual Users Users { get; set; }
+     
 
         public virtual ICollection<MessageRating> MessageRatings{ get; set; }
 
-        public  Messages (int? userId, string messageText, DateTime createdOn)
+        public  Messages (int userId, string messageText, DateTime createdOn)
         {
             UserId = userId;
             MessageText = messageText;
