@@ -10,13 +10,12 @@ namespace Parlez.Models
     public class Messages : BaseEntity
     {
         [Key]
-        [ForeignKey("User")]
+        [ForeignKey("Users")]
        public int? UserId { get; set; }
         public string MessageText { get; set; }
         public DateTime CreatedOn { get; set; }
 
         public virtual Users Users { get; set; }
-        public virtual MessageRating MessageRating { get; set; }
 
         public virtual ICollection<MessageRating> MessageRatings{ get; set; }
 

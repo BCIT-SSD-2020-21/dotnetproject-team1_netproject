@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parlez.Data;
 
 namespace Parlez.Data.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    partial class ChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201208225348_InitialChatSchema")]
+    partial class InitialChatSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,10 +50,18 @@ namespace Parlez.Data.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MessageRatingMessageId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MessageRatingUserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("MessageText")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("MessageRatingUserId", "MessageRatingMessageId");
 
                     b.ToTable("Messages");
                 });
@@ -108,6 +118,10 @@ namespace Parlez.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Parlez.Models.MessageRating", "MessageRating")
+                        .WithMany()
+                        .HasForeignKey("MessageRatingUserId", "MessageRatingMessageId");
                 });
 #pragma warning restore 612, 618
         }

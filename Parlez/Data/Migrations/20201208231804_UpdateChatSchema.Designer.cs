@@ -10,8 +10,8 @@ using Parlez.Data;
 namespace Parlez.Data.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    [Migration("20201208223131_InitialChatSchema")]
-    partial class InitialChatSchema
+    [Migration("20201208231804_UpdateChatSchema")]
+    partial class UpdateChatSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,18 +50,10 @@ namespace Parlez.Data.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MessageRatingMessageId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("MessageRatingUserId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MessageText")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
-
-                    b.HasIndex("MessageRatingUserId", "MessageRatingMessageId");
 
                     b.ToTable("Messages");
                 });
@@ -118,10 +110,6 @@ namespace Parlez.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Parlez.Models.MessageRating", "MessageRating")
-                        .WithMany()
-                        .HasForeignKey("MessageRatingUserId", "MessageRatingMessageId");
                 });
 #pragma warning restore 612, 618
         }
