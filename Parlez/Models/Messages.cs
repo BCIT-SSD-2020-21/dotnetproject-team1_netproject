@@ -7,25 +7,22 @@ using System.Threading.Tasks;
 
 namespace Parlez.Models
 {
-    public class Messages : BaseEntity
+    public class Messages
     {
-        [Key]
-        [ForeignKey("Users")]
-       public int UserId { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string UserName { get; set; }
         public string MessageText { get; set; }
         public DateTime CreatedOn { get; set; }
 
-        public virtual Users Users { get; set; }
-     
 
-        public virtual ICollection<MessageRating> MessageRatings{ get; set; }
-
-        public  Messages (int userId, string messageText, DateTime createdOn)
+        public Messages(int id, string userName, string messageText, DateTime createdOn)
         {
-            UserId = userId;
+            Id = id;
+            UserName = userName;
             MessageText = messageText;
             CreatedOn = createdOn;
         }
-        
+
     }
 }

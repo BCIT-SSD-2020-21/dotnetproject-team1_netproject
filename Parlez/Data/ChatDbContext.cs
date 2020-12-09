@@ -13,34 +13,14 @@ namespace Parlez.Data
 
         public DbSet<Messages> Messages { get; set; }
 
-        public DbSet<MessageRating> MessageRating { get; set; }
-
-        public DbSet <Users> Users { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Messages>()
-               .HasKey(m => new { m.UserId });
+            modelBuilder.Entity<Messages>().HasData(
+            new {Id = 1, UserName = "suup", MessageText = "Clean house", CreatedOn = DateTime.Now }
+        // new { Id = 2, Description = "Play some games", IsComplete = false, Priority = 1, CreatedOn = DateTime.Now },
 
-            modelBuilder.Entity<Messages>()
-                .HasOne(m => m.Users)
-                .WithMany(u => u.Messages)
-                .HasForeignKey(fk => new { fk.UserId });
-
-            modelBuilder.Entity<MessageRating>()
-                 .HasKey(mr => new { mr.UserId, mr.MessageId });
-
-            modelBuilder.Entity<MessageRating>()
-               .HasOne(mr => mr.Users)
-               .WithMany(u => u.MessageRatings)
-               .HasForeignKey(fk => new { fk.UserId }); 
-
-            modelBuilder.Entity<MessageRating>()
-                .HasOne(mr => mr.Messages)
-                .WithMany(m => m.MessageRatings)
-                .HasForeignKey(fk => new { fk.MessageId });
-
-         
+        //new { Id = 3, Description = "Do my project", IsComplete = false, Priority = 1, CreatedOn = DateTime.Now }
+        ) ; 
         }
     }
 }
