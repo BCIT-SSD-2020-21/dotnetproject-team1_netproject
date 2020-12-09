@@ -39,7 +39,7 @@ namespace Parlez.Data.Migrations
 
             modelBuilder.Entity("Parlez.Models.Messages", b =>
                 {
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
