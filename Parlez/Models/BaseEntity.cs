@@ -7,6 +7,6 @@ namespace Parlez.Models
 {
     public class BaseEntity
     {
-        public virtual int Id { get; private set; }
+        public virtual int Id { get; protected set; }
     }
 }
