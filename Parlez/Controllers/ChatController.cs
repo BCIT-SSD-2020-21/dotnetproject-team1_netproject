@@ -48,6 +48,26 @@ namespace Parlez.Controllers
             return Ok(messages);
         }
 
+        //Post Method
+        [HttpPost]
+        public IActionResult Create([FromBody] Messages messages)
+        {
+            if(messages.MessageText != null || messages.MessageText != "")
+            {
+                try
+                {
+                    _db.Messages.Add(messages); //adds message to messages db
+                    _db.SaveChanges(); //commits the change
+                }
+                catch (Exception e)
+                {
+                    return BadRequest(e);
+                }
+                return Ok(messages);
+            }
+            return BadRequest();
+        }
+
         [HttpDelete]
         [Route("MyDelete")] // Custom route
         public IActionResult MyDelete(long Id)
