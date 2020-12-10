@@ -10,8 +10,8 @@ using Parlez.Data;
 namespace Parlez.Data.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    [Migration("20201209215042_TrialMigration")]
-    partial class TrialMigration
+    [Migration("20201210165552_InitialChatSchema")]
+    partial class InitialChatSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace Parlez.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 12, 9, 13, 50, 42, 118, DateTimeKind.Local).AddTicks(699),
+                            CreatedOn = new DateTime(2020, 12, 10, 8, 55, 51, 983, DateTimeKind.Local).AddTicks(6857),
                             MessageText = "Clean house",
                             UserName = "suup"
                         });

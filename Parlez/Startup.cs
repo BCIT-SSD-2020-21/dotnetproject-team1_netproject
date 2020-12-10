@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Parlez.Data;
 
 namespace Parlez
 {
@@ -38,7 +40,7 @@ namespace Parlez
                     });
             });
 
-            //services.AddDbContext<Chat>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbConnection")));
+            services.AddDbContext<ChatDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ChatConnection")));
             services.AddControllers();
 
 
