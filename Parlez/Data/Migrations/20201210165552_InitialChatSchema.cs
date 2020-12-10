@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Parlez.Data.Migrations
 {
-    public partial class TrialMigration : Migration
+    public partial class InitialChatSchema : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,7 @@ namespace Parlez.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Messages",
                 columns: new[] { "Id", "CreatedOn", "MessageText", "UserName" },
-                values: new object[] { 1, new DateTime(2020, 12, 9, 13, 50, 42, 118, DateTimeKind.Local).AddTicks(699), "Clean house", "suup" });
+                values: new object[] { 1, new DateTime(2020, 12, 10, 8, 55, 51, 983, DateTimeKind.Local).AddTicks(6857), "Clean house", "suup" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

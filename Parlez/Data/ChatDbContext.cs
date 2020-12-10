@@ -17,9 +17,6 @@ namespace Parlez.Data
         {
             modelBuilder.Entity<Messages>().HasData(
             new {Id = 1, UserName = "suup", MessageText = "Clean house", CreatedOn = DateTime.Now }
-        // new { Id = 2, Description = "Play some games", IsComplete = false, Priority = 1, CreatedOn = DateTime.Now },
-
-        //new { Id = 3, Description = "Do my project", IsComplete = false, Priority = 1, CreatedOn = DateTime.Now }
         ) ; 
         }
     }
