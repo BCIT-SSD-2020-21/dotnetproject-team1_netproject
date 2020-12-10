@@ -1,26 +1,27 @@
 ###### .NET PROJECT
 
-<div align="center">
-
-## PARLEZ :speech_balloon:
+## PARLEZ CHAT APPLICATION
 
 ###### Mandeep Dhillon, Patrick Fortaleza, Juhwan Moon, AJ Purugganan, Kalvin Tang
 
-</div>
-
-<strong>App type:</strong> Chat Application<br/>
-<strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and delete existing messages, as well as interact with other user's messages.
+<strong>App name:</strong> Parlez <br/>
+<strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and reply to existing comments, as well as interact with other user's messages.
 
 ### FEATURE LIST
 
 #### End Users
 
 1. Users can create accounts and authenticate to view the chat room messages
-2. Users can post messages
+2. Users can post messages, and reply to existing messages
 3. Users can delete their own messages
 4. User can update their display name, and profile picture
 5. Users can upvote/downvote messages and replies
 6. Users can see the timestamp of each message
+
+#### Admin Users
+
+9. Administrators can ban users
+10. Administrators can update user profile details
 
 ### CORE APPLICATION FEATURES
 
@@ -59,30 +60,16 @@
 
 ### Use Case Diagram
 
-<img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/parlez-usecase.png" alt="use case diagram for a messenger application" width="100%" />
+<img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/parlez-usecase.png" alt="use case diagram for a messenger application" />
 
 ### Low-Fidelity Prototype:
 
-Click [here](https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/) to view source.
+https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/
 
-<img src="https://i.imgur.com/8cym8Zu.png" alt="Low Fidelity for chat application" width="100%" />
+![](https://i.imgur.com/8cym8Zu.png)
 
-<img src="https://i.imgur.com/GIupcl2.png" alt ="Low Fidelity for chat application" width="100%" />
+![](https://i.imgur.com/GIupcl2.png)
 
 ### ER Diagram
 
-<img src="https://parlez.s3.ca-central-1.amazonaws.com/parlezV3.jpg" alt="ER diagram for chat application" width="100%" />
-
-</br>
-
-<details>
-<summary>  Potential Future Updates </summary>
-
-</br>
-
-1. Users can reply to an existing messages
-2. Admin user privileges
-3. See who is typing
-4. See who read the message
-
-</details>
+![](https://parlez.s3.ca-central-1.amazonaws.com/parlez.jpg?fbclid=IwAR3c_IZbR9DZctGP2QlJDgeqGsU8wSryNRAxmeJntta9_lUqDtN1TvXiqt8)
