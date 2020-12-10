@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parlez.Data;
 
 namespace Parlez.Data.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    partial class ChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201209230736_InitialChatv4Schema")]
+    partial class InitialChatv4Schema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,14 +77,14 @@ namespace Parlez.Data.Migrations
                         new
                         {
                             UserId = 2,
-                            CreatedOn = new DateTime(2020, 12, 9, 15, 10, 30, 902, DateTimeKind.Local).AddTicks(9351),
+                            CreatedOn = new DateTime(2020, 12, 9, 15, 7, 36, 277, DateTimeKind.Local).AddTicks(7509),
                             MessageId = 1,
                             MessageText = "How are you?"
                         },
                         new
                         {
                             UserId = 3,
-                            CreatedOn = new DateTime(2020, 12, 9, 15, 10, 30, 906, DateTimeKind.Local).AddTicks(576),
+                            CreatedOn = new DateTime(2020, 12, 9, 15, 7, 36, 281, DateTimeKind.Local).AddTicks(467),
                             MessageId = 2,
                             MessageText = "WasUp?"
                         });

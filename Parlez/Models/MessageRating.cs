@@ -9,9 +9,9 @@ namespace Parlez.Models
 {
     public class MessageRating
     {
-        [Key, Column(Order = 0)]
+        [ForeignKey("Users"), Column(Order = 0)]
         public int UserId { get; set; }
-        [Key, Column(Order = 1)]
+        [ForeignKey("Messages"), Column(Order = 1)]
         public int MessageId { get; set; }
         public int Rating { get; set; }
 

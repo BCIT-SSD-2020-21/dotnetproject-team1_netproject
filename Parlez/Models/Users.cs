@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Parlez.Models
 {
-    public class Users : BaseEntity
+    public class Users
     {
-        
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserId { get; set; }
         public string Username { get; set; }
         public string ImageUri { get; set; }
         public string FirstName { get; set; }
@@ -17,11 +18,12 @@ namespace Parlez.Models
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
 
-        public virtual ICollection<Messages> Messages{ get; set; }
+        public virtual ICollection<Messages> Messages { get; set; }
         public virtual ICollection<MessageRating> MessageRatings { get; set; }
-        public Users (string username, string imageUri, string firstName, string lastName,
+        public Users(string username, string imageUri, string firstName, string lastName,
             string email, bool isAdmin)
         {
+            //UserId = userid;
             Username = username;
             ImageUri = imageUri;
             FirstName = firstName;

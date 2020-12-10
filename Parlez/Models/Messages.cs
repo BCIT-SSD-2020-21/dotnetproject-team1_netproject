@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Parlez.Models
 {
-    public class Messages : BaseEntity
+    public class Messages
+
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MessageId { get; set; }
         [ForeignKey("Users")]
-       public int UserId { get; set; }
+        public int UserId { get; set; }
         public string MessageText { get; set; }
         public DateTime CreatedOn { get; set; }
 
@@ -22,6 +24,7 @@ namespace Parlez.Models
 
         public  Messages (int userId, string messageText, DateTime createdOn)
         {
+            //MessageId = messageId;
             UserId = userId;
             MessageText = messageText;
             CreatedOn = createdOn;
