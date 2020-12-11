@@ -16,14 +16,14 @@
 </br>
 
 <details>
-<summary>  INSTALLATION INSTRUCTIONS HERE </summary>
+<summary>  INSTALLATION INSTRUCTIONS HERE! </summary>
 <br/>
 
-1. Clone this Repo locally
-2. Copy the ` appsettingsTEMPLATE.json` to a file called ` appsettings.json`
+1. Clone this Repo to your Local machine
+2. Copy and paste ` appsettingsTEMPLATE.json` file and rename the copy to ` appsettings.json`
 3. Update your Connection string to direct it to your database
 4. Run ` Add-Migrations InitialChatSchema -Context ChatDbContext -OutputDir "Data/Migrations"`
-5. Run ` Update-Database -Context ChatDbContext`
+5. Then run ` Update-Database -Context ChatDbContext`
 
 </details>
 
