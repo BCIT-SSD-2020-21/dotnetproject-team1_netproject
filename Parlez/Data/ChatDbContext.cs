@@ -16,7 +16,7 @@ namespace Parlez.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Messages>().HasData(
-            new {Id = 1, UserName = "suup", MessageText = "Clean house", CreatedOn = DateTime.Now }
+            new {Id = 1, UserName = "JohnDoe", MessageText = "Hello World", CreatedOn = DateTime.Now }
         ) ; 
         }
     }
