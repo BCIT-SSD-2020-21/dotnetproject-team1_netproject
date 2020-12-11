@@ -81,11 +81,9 @@
 
 ### Low-Fidelity Prototype:
 
-Click [here](https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/) to view source.
+<img src="https://parlez.s3.ca-central-1.amazonaws.com/MockUp1.jpg" alt="Low Fidelity for chat application" width="100%" />
 
-<img src="https://i.imgur.com/8cym8Zu.png" alt="Low Fidelity for chat application" width="100%" />
-
-<img src="https://i.imgur.com/GIupcl2.png" alt ="Low Fidelity for chat application" width="100%" />
+<img src="https://parlez.s3.ca-central-1.amazonaws.com/MockUp2.jpg" alt ="Low Fidelity for chat application" width="100%" />
 
 ### ER Diagram
 
