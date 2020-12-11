@@ -8,8 +8,26 @@
 
 </div>
 
+</br>
+
 <strong>App type:</strong> Chat Application<br/>
 <strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and delete existing messages, as well as interact with other user's messages.
+
+</br>
+
+<details>
+<summary>  INSTALLATION INSTRUCTIONS HERE </summary>
+<br/>
+
+1. Clone this Repo locally
+2. Copy the ` appsettingsTEMPLATE.json` to a file called ` appsettings.json`
+3. Update your Connection string to direct it to your database
+4. Run ` Add-Migrations InitialChatSchema -Context ChatDbContext -OutputDir "Data/Migrations"`
+5. Run ` Update-Database -Context ChatDbContext`
+
+</details>
+
+</br>
 
 ### FEATURE LIST
 
