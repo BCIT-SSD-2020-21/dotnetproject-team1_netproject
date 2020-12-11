@@ -15,7 +15,6 @@ namespace Parlez.Models
         public string MessageText { get; set; }
         public DateTime CreatedOn { get; set; }
 
-
         public Messages(int id, string userName, string messageText, DateTime createdOn)
         {
             Id = id;

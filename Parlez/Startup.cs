@@ -39,11 +39,8 @@ namespace Parlez
                         .AllowAnyHeader();
                     });
             });
-
             services.AddDbContext<ChatDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ChatConnection")));
             services.AddControllers();
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,13 +52,9 @@ namespace Parlez
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseCors("AllowAll");
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

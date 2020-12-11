@@ -15,13 +15,12 @@ namespace Parlez.Controllers
     {
         private readonly ChatDbContext _db;
 
-
         public ChatController(ChatDbContext db)
         { 
             _db = db; 
         }
 
-        //Get All method
+        //Get All Method to display chat
         [HttpGet]
         public IActionResult GetAllMessage()
         {
@@ -33,22 +32,23 @@ namespace Parlez.Controllers
                     return NoContent();
                 }
                 return Ok(messages);
-                //return new ObjectResult(todos);
             }
             catch (Exception e)
             {
                 return BadRequest(e);
             }
         }
+
+
         [HttpGet("{id}", Name = "GetOne")]
         public IActionResult GetById(int id)
         {
             var messages = _db.Messages.Where(m => m.Id == id).FirstOrDefault();
-            //return new ObjectResult(todo);
+
             return Ok(messages);
         }
 
-        //Post Method
+        //Post Method to submit chat
         [HttpPost]
         public IActionResult Create([FromBody] Messages messages)
         {
@@ -69,7 +69,7 @@ namespace Parlez.Controllers
         }
 
         [HttpDelete]
-        [Route("MyDelete")] // Custom route
+        [Route("MyDelete")]
         public IActionResult MyDelete(long Id)
         {
             var messages = _db.Messages.Where(t => t.Id == Id).FirstOrDefault();
@@ -81,8 +81,5 @@ namespace Parlez.Controllers
             _db.SaveChanges();
             return new ObjectResult(messages);
         }
-
-
-
     }
 }
