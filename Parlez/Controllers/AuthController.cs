@@ -72,6 +72,7 @@ namespace Parlez.Controllers
                         var tokenString = GenerateJSONWebToken(user);
                         jsonResponse.token = tokenString;
                         jsonResponse.status = "OK";
+                        jsonResponse.username = loginVM.Email;
                         return Json(jsonResponse);
                     }
                 }
