@@ -46,7 +46,7 @@ namespace Parlez.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 12, 16, 13, 5, 53, 463, DateTimeKind.Local).AddTicks(378),
+                            CreatedOn = new DateTime(2020, 12, 16, 13, 28, 37, 71, DateTimeKind.Local).AddTicks(899),
                             MessageText = "Hello World",
                             UserName = "JohnDoe"
                         });

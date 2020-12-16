@@ -39,7 +39,9 @@ namespace Parlez
                         .AllowAnyHeader();
                     });
             });
+         
             services.AddDbContext<ChatDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ChatConnection")));
+            services.AddSession();
             services.AddControllers();
         }
 
@@ -55,6 +57,7 @@ namespace Parlez
             app.UseRouting();
             app.UseCors("AllowAll");
             app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
