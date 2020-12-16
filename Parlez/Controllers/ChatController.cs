@@ -18,14 +18,18 @@ namespace Parlez.Controllers
     {
         private readonly ChatDbContext _db;
 
-        public Messages UserId { get; }
+        //public Messages UserId { get; }
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        public ChatController(ChatDbContext db, Messages userid)
+        public ChatController(ChatDbContext db, 
+                              UserManager<IdentityUser> userManager, 
+                              SignInManager<IdentityUser> signInManager )
         { 
             _db = db;
-            UserId = userid;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            
         }
 
         //Get All Method to display chat
