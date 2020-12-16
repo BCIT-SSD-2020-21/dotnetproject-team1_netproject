@@ -1,8 +1,12 @@
 {
   "dependencies": {
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ChatConnection"
+    },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "AuthContextConnection"
+      "connectionId": "AuthConnection"
     }
   }
 }

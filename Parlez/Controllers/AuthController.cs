@@ -35,7 +35,6 @@ namespace Parlez.Controllers
             _serviceProvider = serviceProvider;
         }
 
-
         [HttpPost("Register")]
         public async Task<JsonResult> RegisterAsync([FromBody] RegisterVM registerVM)
         {
@@ -55,7 +54,6 @@ namespace Parlez.Controllers
             return Json(jsonResponse);
         }
 
-
         [HttpPost("Login")]
         public async Task<JsonResult> SignInAsync([FromBody] LoginVM loginVM)
         {
@@ -74,6 +72,7 @@ namespace Parlez.Controllers
                         var tokenString = GenerateJSONWebToken(user);
                         jsonResponse.token = tokenString;
                         jsonResponse.status = "OK";
+                        jsonResponse.username = loginVM.Email;
                         return Json(jsonResponse);
                     }
                 }
@@ -110,6 +109,5 @@ namespace Parlez.Controllers
                     signingCredentials: credentials);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
     }
 }

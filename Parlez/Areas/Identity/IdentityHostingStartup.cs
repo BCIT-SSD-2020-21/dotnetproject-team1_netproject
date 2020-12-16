@@ -20,7 +20,7 @@ namespace Parlez.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<AuthContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("AuthDbConnection")));
+                        context.Configuration.GetConnectionString("AuthConnection")));
 
                 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

@@ -8,8 +8,26 @@
 
 </div>
 
+</br>
+
 <strong>App type:</strong> Chat Application<br/>
 <strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and delete existing messages, as well as interact with other user's messages.
+
+</br>
+
+<details>
+<summary>  INSTALLATION INSTRUCTIONS HERE! </summary>
+<br/>
+
+1. Clone this Repo to your Local machine
+2. Copy and paste ` appsettingsTEMPLATE.json` file and rename the copy to ` appsettings.json`
+3. Update your Connection string to direct it to your database
+4. Run ` Add-Migrations InitialChatSchema -Context ChatDbContext -OutputDir "Data/Migrations"`
+5. Then run ` Update-Database -Context ChatDbContext`
+
+</details>
+
+</br>
 
 ### FEATURE LIST
 
@@ -63,11 +81,9 @@
 
 ### Low-Fidelity Prototype:
 
-Click [here](https://xd.adobe.com/view/d00e5bba-fc29-4581-9d1a-7b1729e707eb-855d/) to view source.
+<img src="https://parlez.s3.ca-central-1.amazonaws.com/MockUp1.jpg" alt="Low Fidelity for chat application" width="100%" />
 
-<img src="https://i.imgur.com/8cym8Zu.png" alt="Low Fidelity for chat application" width="100%" />
-
-<img src="https://i.imgur.com/GIupcl2.png" alt ="Low Fidelity for chat application" width="100%" />
+<img src="https://parlez.s3.ca-central-1.amazonaws.com/MockUp2.jpg" alt ="Low Fidelity for chat application" width="100%" />
 
 ### ER Diagram
 
