@@ -17,7 +17,7 @@
 </br>
 
 <details>
-<summary>  INSTALLATION INSTRUCTIONS HERE! </summary>
+<summary> :key: INSTALLATION INSTRUCTIONS HERE! </summary>
 <br/>
 <b>.NET API</b> <br/>
 <ol>
@@ -39,7 +39,7 @@
 
 </br>
 
-## FEATURE LIST
+## :bookmark_tabs: FEATURE LIST
 
 ### Core Application Features
 
@@ -69,7 +69,7 @@
 4. An API will be used to communicate data from the server to the front-end.
 5. The application will use ReactJS to send POST/GET/UPDATE/DELETE Requests
 
-## SUPPORTING DOCUMENTS
+## :file_folder: SUPPORTING DOCUMENTS
 
 ### Use Case Diagram
 
