@@ -9,10 +9,11 @@
 </div>
 
 </br>
-
+<strong> Live Application: </strong> <a target="blank_" href="https://parlezprod.netlify.app/">Parlez.netlify.app</a> <br/>
+<br/>
 <strong>App type:</strong> Chat Application<br/>
 <strong>Description:</strong> A simple chat/forum application where users are able to create accounts, post messages to a chatroom, read and delete existing messages.
-
+<br/>
 </br>
 
 <details>
@@ -83,5 +84,3 @@
 <img style="border: solid 1px #ccc" src="https://pfteza-parlez.s3-us-west-2.amazonaws.com/parlez-erd.png" alt="ER diagram for chat application" width="100%" />
 
 </br>
-
-</details>
