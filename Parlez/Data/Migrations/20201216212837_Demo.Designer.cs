@@ -10,8 +10,8 @@ using Parlez.Data;
 namespace Parlez.Data.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    [Migration("20201210165552_InitialChatSchema")]
-    partial class InitialChatSchema
+    [Migration("20201216212837_Demo")]
+    partial class Demo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,9 @@ namespace Parlez.Data.Migrations
                     b.Property<string>("MessageText")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
@@ -45,9 +48,9 @@ namespace Parlez.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 12, 10, 8, 55, 51, 983, DateTimeKind.Local).AddTicks(6857),
-                            MessageText = "Clean house",
-                            UserName = "suup"
+                            CreatedOn = new DateTime(2020, 12, 16, 13, 28, 37, 71, DateTimeKind.Local).AddTicks(899),
+                            MessageText = "Hello World",
+                            UserName = "JohnDoe"
                         });
                 });
 #pragma warning restore 612, 618

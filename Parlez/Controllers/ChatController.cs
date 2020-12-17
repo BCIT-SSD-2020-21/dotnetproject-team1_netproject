@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Parlez.Data;
 using Parlez.Models;
 
@@ -17,9 +20,24 @@ namespace Parlez.Controllers
     {
         private readonly ChatDbContext _db;
 
-        public ChatController(ChatDbContext db)
+        //public Messages UserId { get; }
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private IConfiguration _config;
+        private IServiceProvider _serviceProvider;
+
+        public ChatController(ChatDbContext db, 
+                              UserManager<IdentityUser> userManager, 
+                              SignInManager<IdentityUser> signInManager,
+                              IConfiguration config,
+                              IServiceProvider serviceProvider)
         { 
-            _db = db; 
+            _db = db;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _config = config;
+            _serviceProvider = serviceProvider;
+
         }
 
         //Get All Method to display chat
@@ -54,6 +72,9 @@ namespace Parlez.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Messages messages)
         {
+            if(_signInManager.IsSignedIn(User))
+                messages.UserId = _userManager.GetUserId(User);
+            
             if(messages.MessageText != null || messages.MessageText != "")
             {
                 try
@@ -75,7 +96,9 @@ namespace Parlez.Controllers
         [Route("MyDelete")]
         public IActionResult MyDelete(long Id)
         {
-            var messages = _db.Messages.Where(t => t.Id == Id).FirstOrDefault();
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var messages = _db.Messages.Where(t => t.Id == Id && t.UserId == userId).FirstOrDefault();
+            //var messages = _db.Messages.Where(t => t.Id == Id).FirstOrDefault();
             if (messages == null)
             {
                 return NotFound();

@@ -66,7 +66,7 @@ namespace Parlez.Controllers
                 if (result.Succeeded)
                 {
                     var user = await _userManager.FindByEmailAsync(loginVM.Email);
-
+                    var userid = _userManager.GetUserAsync(User);
                     if (user != null)
                     {
                         var tokenString = GenerateJSONWebToken(user);
@@ -95,10 +95,11 @@ namespace Parlez.Controllers
             var credentials
                 = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new List<Claim> {
+                            new Claim(ClaimTypes.NameIdentifier, user.Id),
                             new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                             new Claim(JwtRegisteredClaimNames.Jti,
-                                        Guid.NewGuid().ToString()),
-                            new Claim(ClaimTypes.NameIdentifier, user.Id)
+                                        Guid.NewGuid().ToString())
+                           
              };
 
             var token = new JwtSecurityToken(

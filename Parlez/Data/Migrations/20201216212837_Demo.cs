@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Parlez.Data.Migrations
 {
-    public partial class InitialChatSchema : Migration
+    public partial class Demo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace Parlez.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(nullable: true),
                     MessageText = table.Column<string>(nullable: true),
-                    CreatedOn = table.Column<DateTime>(nullable: false)
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -24,8 +25,8 @@ namespace Parlez.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Messages",
-                columns: new[] { "Id", "CreatedOn", "MessageText", "UserName" },
-                values: new object[] { 1, new DateTime(2020, 12, 10, 8, 55, 51, 983, DateTimeKind.Local).AddTicks(6857), "Clean house", "suup" });
+                columns: new[] { "Id", "CreatedOn", "MessageText", "UserId", "UserName" },
+                values: new object[] { 1, new DateTime(2020, 12, 16, 13, 28, 37, 71, DateTimeKind.Local).AddTicks(899), "Hello World", null, "JohnDoe" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
