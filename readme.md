@@ -26,6 +26,8 @@
     <li>Update your Connection string to direct it to your local database</li>
     <li>Run `Add-Migrations InitialChatSchema -Context ChatDbContext -OutputDir "Data/Migrations"`</li>
     <li>Then run `Update-Database -Context ChatDbContext`</li>
+    <li>Run `Add-Migrations InitialAuthSchema -Context AuthContext -OutputDir "Areas/Identity/Data/Migrations"`</li>
+    <li>Then run `Update-Database -Context AuthContext`</li>
 </ol>
 <b>React Client</b>
 <ol>
