@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Parlez.Areas.Identity.Data.Migrations
 {
-    public partial class InitialAuthSchema : Migration
+    public partial class UpdateProdAuth : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

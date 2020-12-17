@@ -10,8 +10,8 @@ using Parlez.Data;
 namespace Parlez.Areas.Identity.Data.Migrations
 {
     [DbContext(typeof(AuthContext))]
-    [Migration("20201216025343_TrialVIdentityShcema")]
-    partial class TrialVIdentityShcema
+    [Migration("20201217023953_UpdateProdAuth")]
+    partial class UpdateProdAuth
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
