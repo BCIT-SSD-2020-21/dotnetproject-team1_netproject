@@ -67,7 +67,6 @@ namespace Parlez.Controllers
                 {
                     var user = await _userManager.FindByEmailAsync(loginVM.Email);
                     var userid = await _userManager.GetUserIdAsync(user);
-                    //var userid = await _userManager.;
 
                     if (user != null)
                     {
