@@ -66,13 +66,16 @@ namespace Parlez.Controllers
                 if (result.Succeeded)
                 {
                     var user = await _userManager.FindByEmailAsync(loginVM.Email);
-                    var userid = _userManager.GetUserAsync(User);
+                    var userid = await _userManager.GetUserIdAsync(user);
+                    //var userid = await _userManager.;
+
                     if (user != null)
                     {
                         var tokenString = GenerateJSONWebToken(user);
                         jsonResponse.token = tokenString;
                         jsonResponse.status = "OK";
                         jsonResponse.username = loginVM.Email;
+                        jsonResponse.userid = userid;
                         return Json(jsonResponse);
                     }
                 }

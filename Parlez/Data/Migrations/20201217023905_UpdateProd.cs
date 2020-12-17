@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Parlez.Data.Migrations
 {
-    public partial class Demo : Migration
+    public partial class UpdateProd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,7 +26,7 @@ namespace Parlez.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Messages",
                 columns: new[] { "Id", "CreatedOn", "MessageText", "UserId", "UserName" },
-                values: new object[] { 1, new DateTime(2020, 12, 16, 13, 28, 37, 71, DateTimeKind.Local).AddTicks(899), "Hello World", null, "JohnDoe" });
+                values: new object[] { 1, new DateTime(2020, 12, 16, 18, 39, 4, 887, DateTimeKind.Local).AddTicks(9548), "Hello World", null, "JohnDoe" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
